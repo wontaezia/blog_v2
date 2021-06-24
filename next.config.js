@@ -1,0 +1,25 @@
+const path = require('path');
+
+module.exports = {
+    reactStrictMode: true,
+    distDir: 'build',
+    webpack(config, options) {
+        config.resolve = {
+            alias: {
+                '@src': path.join(__dirname, 'src'),
+                '@components': path.join(__dirname, 'src', 'components'),
+                '@styles': path.join(__dirname, 'src', 'styles'),
+                '@modules': path.join(__dirname, 'src', 'modules'),
+                '@pages': path.join(__dirname, 'src', 'pages'),
+                '@hooks': path.join(__dirname, 'src', 'hooks'),
+                '@assets': path.join(__dirname, 'src', 'assets'),
+                '@templates': path.join(__dirname, 'src', 'templates'),
+                '@utils': path.join(__dirname, 'src', 'utils'),
+            },
+            extensions: ['js', 'jsx'],
+            ...config.resolve,
+        };
+
+        return config;
+    },
+};
