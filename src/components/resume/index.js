@@ -1,5 +1,5 @@
-import Experience from '@components/resume/Experience';
-import Project from '@components/resume/Project';
-import Skill from '@components/resume/Skill';
+import Experience from '@components/resume/experience';
+import Project from '@components/resume/project';
+import Skill from '@components/resume/skill';
 
 export { Experience, Project, Skill };
