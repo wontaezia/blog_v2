@@ -4,4 +4,4 @@ import OverLayMenu from '@components/common/overlayMenu';
 import Goo from '@components/common/gooey';
 import Bubble from '@components/common/bubble';
 
-export { Cursor, Header, OverLayMenu, Bubble };
+export { Cursor, Header, OverLayMenu, Goo, Bubble };
