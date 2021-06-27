@@ -14,7 +14,7 @@ export const getOverlayTimeline = (
     menuSelector,
 ) => {
     const query = gsap.utils.selector(ref);
-    const allMenu = gsap.utils.toArray(menuSelector('.overlay-menu'));
+    const allMenu = gsap.utils.toArray(menuSelector('.overlay-menu span'));
     gsap.killTweensOf(ref);
     const tl = gsap.timeline({
         paused: true,
@@ -41,7 +41,7 @@ export const getOverlayTimeline = (
                 opacity: isOpen ? 1 : 0,
                 ease: 'Power1.easeOut',
                 duration: isOpen ? 0.8 : 0.6,
-                stagger: 0.12,
+                stagger: isOpen ? 0.06 : -0.06,
                 delay: isOpen ? 1 : 0,
             },
             'start',
@@ -50,9 +50,9 @@ export const getOverlayTimeline = (
             allMenu,
             {
                 y: isOpen ? '0' : '-60%',
-                ease: 'Power2.easeInOut',
+                ease: 'Power2.inOut',
                 duration: 0.8,
-                stagger: 0.12,
+                stagger: isOpen ? 0.06 : -0.06,
                 delay: isOpen ? 0.8 : 0,
                 onComplete: () => {
                     if (!isOpen) {

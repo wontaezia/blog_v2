@@ -3,7 +3,8 @@ import { ThemeProvider } from 'styled-components';
 import { useTheme } from '@hooks';
 import { themes, Inner } from '@styles/theme';
 import { GlobalStyle } from '@styles/global';
-import { Cursor, Header, OverLayMenu } from '@components/common';
+import { isBrowser, isSafari } from 'react-device-detect';
+import { Cursor, Header, OverLayMenu, Bubble } from '@components/common';
 
 function Layout({ children }) {
     const { currentTheme, setTheme } = useTheme();
@@ -17,6 +18,7 @@ function Layout({ children }) {
         <ThemeProvider theme={themes[currentTheme]}>
             <Header />
             <Cursor />
+            {isBrowser && !isSafari ? <Bubble /> : null}
             <OverLayMenu />
             <Inner currentTheme={currentTheme}>{children}</Inner>
             <GlobalStyle />

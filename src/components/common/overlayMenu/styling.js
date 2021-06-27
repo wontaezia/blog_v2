@@ -56,8 +56,6 @@ export const Menu = styled.ul`
 
     li {
         overflow: hidden;
-        opacity: 0;
-        transform: translateY(60%);
     }
 
     li:hover a {
@@ -79,6 +77,8 @@ export const InnerText = styled.span`
     color: ${({ theme }) => theme.background};
     font-weight: 800;
     text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(60%);
 `;
 
 export const Arrow = styled.span`
