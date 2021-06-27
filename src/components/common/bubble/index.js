@@ -68,19 +68,9 @@ function Bubble() {
         let particleArray = [];
 
         for (let i = 0; i < numberOfParticles; i++) {
-            let x = Math.random() * canvas.width;
-            let y = Math.random() * canvas.height;
-            let size = Math.random() * 30 + 10;
-            let color =
-                currentTheme === 'light'
-                    ? isMenuOpen
-                        ? '#ffffff'
-                        : '#000000'
-                    : isMenuOpen
-                    ? '#000000'
-                    : '#ffffff';
+            let color = colorRef.current;
             let weight = 1;
-            particleArray.push(new Particle(x, y, size, color, weight));
+            particleArray.push(new Particle(0, 0, 1, color, weight));
         }
         setParticles(particleArray);
     };

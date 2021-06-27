@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+export const Container = styled.div`
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -10,7 +10,7 @@ const Container = styled.div`
     pointer-events: none;
 `;
 
-const Canvas = styled.canvas`
+export const Canvas = styled.canvas`
     position: absolute;
     top: 0;
     left: 0;
