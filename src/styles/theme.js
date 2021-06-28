@@ -174,7 +174,7 @@ const prismBaseTheme = css`
     }
     .remark-code-title {
         padding: 0.5rem 1rem;
-        font-family: 'JetBrains Mono', 'Noto Sans';
+        font-family: 'JetBrains Mono', 'Noto Sans KR';
         background: ${colors.gray[200]};
         color: ${colors.gray[800]};
         border: 1px solid ${colors.gray[200]};
@@ -310,7 +310,7 @@ export const Inner = styled.div`
             #000 40%,
             rgba(0, 0, 0, 0.01) 100%
         )`};
-        z-index: 1;
+        z-index: 2;
     }
 
     @media ${device.desktop} {

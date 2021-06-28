@@ -94,22 +94,3 @@ export const Arrow = styled.span`
         }
     }
 `;
-
-export const ThemeButton = styled.button`
-    outline: none;
-    border: none;
-    background: none;
-    position: absolute;
-    left: 32px;
-    top: 50%;
-    padding-left: 0;
-    margin-bottom: 96px;
-    color: ${({ theme }) => theme.background};
-    font-size: 1rem;
-    font-weight: 800;
-    letter-spacing: -0.05em;
-    text-transform: uppercase;
-
-    opacity: ${({ isMenuOpen }) => (isMenuOpen ? 1 : 0)};
-    transition: all 0.4s;
-`;

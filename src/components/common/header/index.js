@@ -37,6 +37,16 @@ const Header = () => {
         <S.Container isMenuOpen={isMenuOpen} {...M.container}>
             <S.Inner>
                 <S.Flex>
+                    <S.ThemeButton
+                        onMouseEnter={() => {
+                            handleCursorType('hovered');
+                        }}
+                        onMouseLeave={() => handleCursorType('default')}
+                        onClick={toggleTheme}
+                        isMenuOpen={isMenuOpen}
+                    >
+                        {currentTheme === 'light' ? 'LIGHT' : 'DARK'}
+                    </S.ThemeButton>
                     <S.Logo
                         onClick={isMenuOpen ? handleMenu : null}
                         onMouseEnter={() => {
@@ -48,30 +58,18 @@ const Header = () => {
                             <a>WONTAE.</a>
                         </Link>
                     </S.Logo>
-                    <S.MenuContainer>
-                        <S.ThemeButton
+                    <S.Menu isMenuOpen={isMenuOpen}>
+                        <button
                             onMouseEnter={() => {
                                 handleCursorType('hovered');
                             }}
                             onMouseLeave={() => handleCursorType('default')}
-                            onClick={toggleTheme}
+                            disabled={isClicked}
+                            onClick={handleMenu}
                         >
-                            {currentTheme === 'light' ? '🌞' : '🌝'}
-                        </S.ThemeButton>
-                        <S.Menu isMenuOpen={isMenuOpen}>
-                            <button
-                                onMouseEnter={() => {
-                                    handleCursorType('hovered');
-                                }}
-                                onMouseLeave={() => handleCursorType('default')}
-                                disabled={isClicked}
-                                onClick={handleMenu}
-                                isMenuOpen={isMenuOpen}
-                            >
-                                {isMenuOpen ? 'Close' : 'Menu'}
-                            </button>
-                        </S.Menu>
-                    </S.MenuContainer>
+                            {isMenuOpen ? 'Close' : 'Menu'}
+                        </button>
+                    </S.Menu>
                 </S.Flex>
             </S.Inner>
         </S.Container>

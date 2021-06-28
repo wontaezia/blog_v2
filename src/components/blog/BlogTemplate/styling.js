@@ -17,6 +17,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
+    position: relative;
     ${flex(null, 'center')}
     margin-bottom: 0;
     font-weight: 700;
@@ -28,6 +29,18 @@ export const Title = styled.h1`
 
     @media ${device.tablet} {
         font-size: 4rem;
+    }
+`;
+
+export const Arrow = styled.div`
+    position: absolute;
+    top: -5rem;
+    left: 0;
+    width: 2rem;
+    transform: rotate(180deg);
+
+    path {
+        fill: ${({ theme }) => theme.text};
     }
 `;
 
@@ -102,7 +115,7 @@ export const Body = styled(motion.div)`
         position: relative;
         padding: 0 4px;
         background-color: ${colors.primary};
-        color: ${({ theme }) => theme.text};
+        color: #000;
         font-size: 0.8rem;
     }
 

@@ -113,7 +113,7 @@ export const Loading = styled.div`
     height: 100%;
     background: ${({ theme }) => theme.text};
     transform: translateY(-120%);
-    z-index: 3;
+    z-index: 2;
 `;
 
 export const Thumbnail = styled.div`

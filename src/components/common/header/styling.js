@@ -55,9 +55,14 @@ export const Flex = styled.div`
 `;
 
 export const Logo = styled.h1`
-    ${flex('flex-start', 'center')}
+    ${flex('center', 'center')}
     width: 80px;
     margin: 0;
+
+    a {
+        margin: 0;
+        padding: 0;
+    }
 `;
 
 export const MenuContainer = styled.div`
@@ -68,7 +73,15 @@ export const ThemeButton = styled.button`
     outline: none;
     border: none;
     background: none;
-    padding: 10px 0 10px 10px;
+    text-align: left;
+    padding: 10px 10px 10px 0px;
+    width: 64px;
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    color: ${({ theme, isMenuOpen }) =>
+        isMenuOpen ? theme.background : theme.text};
+    transition: color 0.6s ease-in-out;
+    transition-delay: ${({ isMenuOpen }) => (isMenuOpen ? '0s' : '0.6s')};
 `;
 
 export const Menu = styled.div`
@@ -76,6 +89,7 @@ export const Menu = styled.div`
         position: relative;
         display: inline-flex;
         align-items: center;
+        width: 64px;
         height: 24px;
         padding: 10px 20px;
         padding-right: 0;

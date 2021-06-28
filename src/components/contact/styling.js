@@ -45,7 +45,7 @@ export const Mail = styled.div`
     color: ${({ theme }) => theme.text};
     text-decoration: underline;
 
-    @media ${device.tablet} {
+    @media ${device.desktop} {
         font-size: 5rem;
     }
 `;
