@@ -1,6 +1,9 @@
 const path = require('path');
 
 module.exports = {
+    images: {
+        domains: ['i.imgur.com'],
+    },
     reactStrictMode: true,
     distDir: 'build',
     webpack(config, options) {

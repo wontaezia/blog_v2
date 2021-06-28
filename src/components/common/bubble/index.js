@@ -27,7 +27,7 @@ function Bubble() {
     }, [isMenuOpen, currentTheme]);
 
     class Particle {
-        constructor(x, y, size, color, weight) {
+        constructor(x, y, size, weight) {
             this.x = x;
             this.y = y;
             this.size = size;
@@ -89,10 +89,15 @@ function Bubble() {
         animationFrameId.current = requestAnimationFrame(animate);
     };
 
+    const resized = () => {
+        canvasRef.current.width = window.innerWidth;
+        canvasRef.current.height = window.innerHeight;
+    };
+
     const handleMousePosition = (event) => {
         position.current = {
-            x: event.x,
-            y: event.y,
+            x: event.pageX,
+            y: event.pageY,
         };
     };
 
@@ -142,15 +147,18 @@ function Bubble() {
     useEffect(() => {
         const canvas = canvasRef.current;
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        resized();
+        window.addEventListener('resize', resized);
 
         gsap.delayedCall(
             0.2,
             () => (position.current = { x: undefined, y: undefined }),
         );
 
-        return () => cancelAnimationFrame(animationFrameId.current);
+        return () => {
+            cancelAnimationFrame(animationFrameId.current);
+            window.removeEventListener('resize', resized);
+        };
     }, []);
 
     return (

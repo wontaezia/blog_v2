@@ -69,8 +69,12 @@ export const Post = styled.li`
     position: relative;
     overflow: hidden;
     z-index: 1;
-    opacity: 0;
-    transform: translateY(20%);
+
+    &.post0,
+    &.post1 {
+        opacity: 0;
+        transform: translateY(20%);
+    }
 
     & > a::before {
         content: '';

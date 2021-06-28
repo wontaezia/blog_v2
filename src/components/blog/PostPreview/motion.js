@@ -1,21 +1,5 @@
 import { gsap } from 'gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-
-const handlePostTrigger = (listQuery) => {
-    const posts = gsap.utils.toArray(listQuery('.post'));
-
-    posts.forEach((post, i) => {
-        const postTimeline = getPostTrigger(post, i);
-
-        ScrollTrigger.create({
-            trigger: post,
-            start: '10% 100%',
-            onEnter() {
-                postTimeline.play();
-            },
-        });
-    });
-};
+// import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 
 export const getTitleMotion = (query, listQuery) => {
     const tl = gsap.timeline({ paused: true });
@@ -38,45 +22,29 @@ export const getTitleMotion = (query, listQuery) => {
                 duration: 0.6,
                 ease: 'Power2.out',
                 stagger: 0.1,
-                onComplete() {
-                    handlePostTrigger(listQuery);
-                },
-            },
-            'start',
-        );
-
-    return tl;
-};
-
-export const getPostTrigger = (post, i) => {
-    const tl = gsap.timeline({
-        paused: true,
-    });
-
-    tl.addLabel('start')
-        .to(
-            post,
-            {
-                delay() {
-                    return i % 2 ? 0.2 : 0;
-                },
-                opacity: 1,
-                duration: 0.8,
-                ease: 'Power1.inOut',
             },
             'start',
         )
+        .addLabel('title')
         .to(
-            post,
+            [listQuery('.post0'), listQuery('.post1')],
             {
-                delay() {
-                    return i % 2 ? 0.2 : 0;
-                },
+                opacity: 1,
+                duration: 0.8,
+                ease: 'Power1.inOut',
+                stagger: 0.2,
+            },
+            'title-=0.4',
+        )
+        .to(
+            [listQuery('.post0'), listQuery('.post1')],
+            {
                 y: 0,
                 duration: 0.8,
                 ease: 'Power2.out',
+                stagger: 0.2,
             },
-            'start',
+            'title-=0.4',
         );
 
     return tl;

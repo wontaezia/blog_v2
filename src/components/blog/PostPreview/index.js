@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
 import * as S from '@components/blog/PostPreview/styling';
 import * as M from '@components/blog/PostPreview/motion';
 
@@ -39,9 +38,9 @@ function PostPreview({ data, totalCount, tag }) {
             </S.MainTitle>
             <S.PostCount tag={tag}>{totalCount} Posts</S.PostCount>
             <S.PostList ref={listRef}>
-                {data.map(({ title, slug, img, tags, publishedAt }) => {
+                {data.map(({ title, slug, img, tags, publishedAt }, i) => {
                     return (
-                        <S.Post key={title} className="post">
+                        <S.Post key={title} className={'post' + i}>
                             <Link href={`/blog/${slug}`}>
                                 <a>
                                     <div className="hover" />

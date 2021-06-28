@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { useCursor } from '@hooks';
+import { useCursor, useTheme, useMenu } from '@hooks';
 import * as S from '@components/common/cursor/styling';
 
 const Cursor = () => {
-    const { isHoverOnTarget } = useCursor();
     const cursorRef = useRef(null);
+    const { isHoverOnTarget } = useCursor();
+    const { currentTheme } = useTheme();
+    const { isMenuOpen } = useMenu();
 
     const onMouseMove = (event) => {
         const { pageX: x, pageY: y } = event;
@@ -26,6 +28,8 @@ const Cursor = () => {
             className={`${
                 !!isHoverOnTarget ? 'hovered' : ''
             } ${isHoverOnTarget}`}
+            currentTheme={currentTheme}
+            isMenuOpen={isMenuOpen}
             ref={cursorRef}
         />
     );
