@@ -13,7 +13,6 @@ export const getOverlayTimeline = (
     setIsMenuActive,
     menuSelector,
 ) => {
-    const query = gsap.utils.selector(ref);
     const allMenu = gsap.utils.toArray(menuSelector('.overlay-menu span'));
     gsap.killTweensOf(ref);
     const tl = gsap.timeline({

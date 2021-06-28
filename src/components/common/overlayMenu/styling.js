@@ -6,7 +6,7 @@ export const Container = styled(motion.div)`
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     pointer-events: ${({ isMenuActive }) =>
         isMenuActive ? 'initial' : 'none'};

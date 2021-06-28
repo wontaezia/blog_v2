@@ -94,8 +94,11 @@ function Bubble() {
             x: event.x,
             y: event.y,
         };
+    };
 
-        gsap.delayedCall(0.5, removeMouse);
+    const onMouseDown = (event) => {
+        handleMousePosition(event);
+        window.addEventListener('mousemove', handleMousePosition);
     };
 
     const removeMouse = () => {
@@ -103,6 +106,8 @@ function Bubble() {
             x: undefined,
             y: undefined,
         };
+
+        window.removeEventListener('mousemove', handleMousePosition);
     };
 
     useEffect(() => {
@@ -118,9 +123,11 @@ function Bubble() {
         if (!contextRef) return;
         init(canvasRef.current);
 
-        window.addEventListener('mousedown', handleMousePosition);
+        window.addEventListener('mousedown', onMouseDown);
+        window.addEventListener('mouseup', removeMouse);
         return () => {
-            window.removeEventListener('mousedown', handleMousePosition);
+            window.removeEventListener('mousedown', onMouseDown);
+            window.removeEventListener('mouseup', removeMouse);
         };
     }, [contextRef]);
 
@@ -149,12 +156,7 @@ function Bubble() {
     return (
         <S.Container>
             <Goo intensity="strong">
-                <S.Canvas
-                    style={{
-                        filter: `url(#gooey-react)`,
-                    }}
-                    ref={canvasRef}
-                />
+                <S.Canvas ref={canvasRef} />
             </Goo>
         </S.Container>
     );

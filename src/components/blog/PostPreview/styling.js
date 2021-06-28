@@ -113,6 +113,8 @@ export const Loading = styled.div`
 `;
 
 export const Thumbnail = styled.div`
+    background-color: #fff;
+
     &:hover div {
         opacity: 1;
     }
@@ -147,7 +149,7 @@ export const Title = styled.h3`
 `;
 
 export const CreateAt = styled.span`
-    color: ${colors.gray[800]};
+    color: ${colors.gray[400]};
     font-weight: 500;
     font-size: 1rem;
     opacity: 0.33;
@@ -162,7 +164,7 @@ export const Tags = styled.ul`
 
     li {
         margin-right: 1rem;
-        color: ${colors.gray[800]};
+        color: ${colors.gray[600]};
         font-weight: 500;
         font-size: 1rem;
         line-height: 1.6;
