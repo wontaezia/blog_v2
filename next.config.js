@@ -4,6 +4,9 @@ module.exports = {
     images: {
         domains: ['i.imgur.com'],
     },
+    flags: {
+        DEV_SSR: false,
+    },
     reactStrictMode: true,
     distDir: 'build',
     webpack(config, options) {

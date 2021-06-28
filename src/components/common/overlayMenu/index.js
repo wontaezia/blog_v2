@@ -15,7 +15,6 @@ function OverlayMenu() {
     const menuSelector = gsap.utils.selector(menuContainerRef);
     const { isMenuOpen, setMenuState } = useMenu();
     const { handleCursorType } = useCursor();
-    const { currentTheme, toggleTheme } = useTheme();
 
     const onClickLink = () => {
         const isScrollLock = document.body.classList.contains('no-scroll');
@@ -24,7 +23,6 @@ function OverlayMenu() {
         if (isScrollLock) {
             document.body.classList.remove('no-scroll');
         } else {
-            å;
             document.body.classList.add('no-scroll');
         }
     };
@@ -80,16 +78,6 @@ function OverlayMenu() {
                         </li>
                     ))}
                 </S.Menu>
-                <S.ThemeButton
-                    onMouseEnter={() => {
-                        handleCursorType('hovered');
-                    }}
-                    onMouseLeave={() => handleCursorType('default')}
-                    onClick={toggleTheme}
-                    isMenuOpen={isMenuOpen}
-                >
-                    {currentTheme}
-                </S.ThemeButton>
             </S.MenuContainer>
         </S.Container>
     );

@@ -60,52 +60,36 @@ export const Logo = styled.h1`
     margin: 0;
 `;
 
+export const MenuContainer = styled.div`
+    ${flex('space-between', 'center')}
+`;
+
+export const ThemeButton = styled.button`
+    outline: none;
+    border: none;
+    background: none;
+    padding: 10px 0 10px 10px;
+`;
+
 export const Menu = styled.div`
     button {
         position: relative;
         display: inline-flex;
         align-items: center;
-        width: 26px;
         height: 24px;
-        padding: 20px;
+        padding: 10px 20px;
         padding-right: 0;
         background: none;
         border: none;
         transform-origin: center;
         outline: none;
-
-        span {
-            position: absolute;
-            right: 0;
-        }
-
-        /* 
-        span {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            display: block;
-            width: 26px;
-            height: 2px;
-            background: ${({ theme, isMenuOpen }) =>
+        font-weight: 700;
+        text-align: right;
+        text-transform: uppercase;
+        letter-spacing: -0.06em;
+        color: ${({ theme, isMenuOpen }) =>
             isMenuOpen ? theme.background : theme.text};
-            transform: translateY(-50%);
-            transition: background-color 0.6s ease-in-out;
-            transition-delay: ${({ isMenuOpen }) =>
-            isMenuOpen ? '0s' : '0.6s'};
-        }
-
-        span:first-of-type {
-            transform: translateY(calc(-50% - 4px));
-        }
-        span:last-of-type {
-            transform: translateY(calc(-50% + 4px));
-        } */
-    }
-
-    button.is-active {
-        span {
-            /* transform: rotate(-45deg); */
-        }
+        transition: color 0.6s ease-in-out;
+        transition-delay: ${({ isMenuOpen }) => (isMenuOpen ? '0s' : '0.6s')};
     }
 `;

@@ -14,12 +14,12 @@ function MyApp({ Component, pageProps }) {
                 <link
                     rel="preconnect"
                     href="https://fonts.gstatic.com"
-                    crossOrigin="true"
+                    crossorigin
                 />
                 <link
-                    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Noto+Sans+KR:wght@100;300;400;700&family=Poppins:wght@300;500;700&display=swap"
+                    href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;700&family=JetBrains+Mono&family=Noto+Sans+KR:wght@100;300;400;700&display=swap"
                     rel="stylesheet"
-                />
+                />{' '}
             </Head>
             <Layout>
                 <AnimatePresence initial={true} exitBeforeEnter>
