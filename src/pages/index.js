@@ -7,7 +7,7 @@ import Stack from '@components/laptop';
 export default function Home() {
     return (
         <div>
-            <Stack />
+            {/* <Stack /> */}
             <div />
         </div>
     );

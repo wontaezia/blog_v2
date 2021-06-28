@@ -17,8 +17,8 @@ function Layout({ children }) {
     return (
         <ThemeProvider theme={themes[currentTheme]}>
             <Header />
-            <Cursor />
             <OverLayMenu />
+            {isBrowser ? <Cursor /> : null}
             {isBrowser && !isSafari ? <Bubble /> : null}
             <Inner currentTheme={currentTheme}>{children}</Inner>
             <GlobalStyle />

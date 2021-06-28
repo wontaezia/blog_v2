@@ -24,7 +24,6 @@ export async function getAllFiles() {
         frontmatters.push(data);
     });
 
-    console.log(frontmatters);
     return frontmatters;
 }
 
