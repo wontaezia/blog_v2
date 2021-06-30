@@ -2,7 +2,6 @@ import { gsap } from 'gsap';
 
 export const getTitleMotion = (query) => {
     const tl = gsap.timeline({ paused: true });
-
     tl.addLabel('start')
         .to(
             query('.contact--title span'),
