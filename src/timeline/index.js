@@ -40,7 +40,6 @@ export const play = (pathname, router, node, appears) => {
       }
       if (pathname === '/portfolio') {
         if (!search) {
-          console.log('g');
           timeline = getPortfolioTimeline(node, delay);
           break;
         }
@@ -54,8 +53,6 @@ export const play = (pathname, router, node, appears) => {
 
 export const exit = (node) => {
   const tl = gsap.timeline({ paused: true });
-  console.log('exit');
-  console.log({ node });
   gsap.set(window, { scrollTo: { y: 0 } });
 
   tl.to(node.current, {
