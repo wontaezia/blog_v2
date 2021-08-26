@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef, forwardRef } from 'react';
 import Link from 'next/link';
 import { gsap } from 'gsap';
-import * as S from '@components/blog/BlogTemplate/styling';
-import * as M from '@components/blog/BlogTemplate/motion';
+import * as S from '@components/blog/blogTemplate/styling';
+import * as M from '@components/blog/blogTemplate/motion';
 
 const BlogTemplate = forwardRef(({ children }, ref) => {
   const [date, setDate] = useState('');
