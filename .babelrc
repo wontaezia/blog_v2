@@ -1,26 +1,28 @@
 {
-    "presets": ["next/babel"],
-    "plugins": [
-        [
-            "styled-components",
-            { "ssr": true, "fileName": true, "displayName": true, "pure": true }
-        ],
-        [
-            "module-resolver",
-            {
-                "root": ["./src"],
-                "alias": {
-                    "@src": "./src",
-                    "@components": "./src/components",
-                    "@styles": "./src/styles",
-                    "@modules": "./src/modules",
-                    "@pages": "./src/pages",
-                    "@hooks": "./src/hooks",
-                    "@assets": "./src/assets",
-                    "@templates": "./src/templates",
-                    "@utils": "./src/utils"
-                }
-            }
-        ]
+  "presets": ["next/babel"],
+  "plugins": [
+    [
+      "styled-components",
+      { "ssr": true, "fileName": true, "displayName": true, "pure": true }
+    ],
+    ["glsl"],
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "@src": "./src",
+          "@components": "./src/components",
+          "@styles": "./src/styles",
+          "@modules": "./src/modules",
+          "@pages": "./src/pages",
+          "@hooks": "./src/hooks",
+          "@assets": "./src/assets",
+          "@templates": "./src/templates",
+          "@utils": "./src/utils",
+          "@timeline": "./src/timeline"
+        }
+      }
     ]
+  ]
 }

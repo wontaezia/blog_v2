@@ -21,6 +21,7 @@ module.exports = {
                 '@assets': path.join(__dirname, 'src', 'assets'),
                 '@templates': path.join(__dirname, 'src', 'templates'),
                 '@utils': path.join(__dirname, 'src', 'utils'),
+                '@timeline': path.join(__dirname, 'src', 'timeline'),
             },
             extensions: ['js', 'jsx'],
             ...config.resolve,

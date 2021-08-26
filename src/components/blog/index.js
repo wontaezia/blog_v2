@@ -1,4 +1,4 @@
-import BlogTemplate from '@components/blog/BlogTemplate';
-import PostPreview from '@components/blog/PostPreview';
+import BlogTemplate from '@components/blog/blogTemplate';
+import PostPreview from '@components/blog/postPreview';
 
 export { BlogTemplate, PostPreview };

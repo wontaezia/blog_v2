@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
+import Home from '@components/home';
 
-export default function Home() {
-    return (
-        <div>
-            <div />
-        </div>
-    );
-}
+const Main = forwardRef((props, ref) => {
+  return <Home ref={ref} />;
+});
+
+export default Main;

@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 import { getAllFiles } from '@utils/mdx';
 import { PostPreview } from '@components/blog';
+import { Container } from '@styles/layout';
 
-function Blog({ frontMatters }) {
+const Blog = forwardRef(({ frontMatters }, ref) => {
     const [totalCount, setTotalCount] = useState(0);
     const [sortedData, setSortedData] = useState([]);
 
@@ -24,14 +25,14 @@ function Blog({ frontMatters }) {
     }, []);
 
     return (
-        <>
+        <Container ref={ref}>
             {sortedData.length ? (
                 <PostPreview totalCount={totalCount} data={sortedData} />
             ) : null}
             <div />
-        </>
+        </Container>
     );
-}
+});
 
 export default Blog;
 

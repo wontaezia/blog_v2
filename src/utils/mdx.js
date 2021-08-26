@@ -7,7 +7,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 const root = process.cwd();
 
 export async function getFiles() {
-    return fs.readdirSync(path.join(root, 'src/posts'));
+    return fs.readdirSync(path.join(root, 'src/assets/posts'));
 }
 
 export async function getAllFiles() {
@@ -16,7 +16,7 @@ export async function getAllFiles() {
 
     (await files).map((file) => {
         const source = fs.readFileSync(
-            path.join(root, 'src/posts', file),
+            path.join(root, 'src/assets/posts', file),
             'utf-8',
         );
         const { data } = matter(source);

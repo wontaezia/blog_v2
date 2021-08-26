@@ -41,7 +41,7 @@ export const Introduce = styled.p`
 
 export const Title = styled.h1`
     padding-bottom: 3rem;
-    margin: 18rem 0 8rem;
+    margin: 50vh 0 8rem;
     font-weight: 700;
     font-size: 3rem;
     line-height: 1.333;
@@ -76,7 +76,7 @@ export const Subhead = styled.h2`
         margin-top: 8rem;
     }
 
-    font-size: 2.8rem;
-    font-weight: bolder;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: ${({ theme }) => theme.$mainColor};
 `;
