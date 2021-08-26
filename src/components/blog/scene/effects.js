@@ -1,7 +1,10 @@
 import { useRef, useEffect } from 'react';
-import { useThree, useFrame } from '@react-three/fiber';
+import { useThree, useFrame, extend } from '@react-three/fiber';
 import { useWindowSize } from '@hooks';
 import { EffectShaderMaterial } from '@components/blog/scene/materials';
+import { EffectComposer, RenderPass, ShaderPass } from 'postprocessing';
+
+extend({ EffectComposer, RenderPass, ShaderPass });
 
 function Effects() {
   const composer = useRef(null);
