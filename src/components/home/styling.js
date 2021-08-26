@@ -7,8 +7,8 @@ export const Container = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  font-size: 2.4rem;
-  letter-spacing: -0.2rem;
+  font-size: 1.6rem;
+  letter-spacing: -0.1rem;
   line-height: 1.4;
   text-align: center;
   font-weight: 500;
@@ -24,7 +24,9 @@ export const Container = styled.div`
     height: -webkit-fill-available;
   }
 
-  @media ${device.mobile} {
+  @media ${device.landscape} {
+    font-size: 2.4rem;
+    letter-spacing: -0.2rem;
   }
 `;
 
