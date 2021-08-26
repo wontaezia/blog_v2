@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
-import * as S from '@components/blog/postPreview/styling';
+import * as S from '@components/blog/PostPreview/styling';
 import Scene from '@components/blog/scene';
 
 function PostPreview({ data, totalCount, tag }) {
