@@ -44,7 +44,7 @@ export const Thumbnail = styled.div`
   img {
     width: 100%;
     display: block;
-    opacity: 0;
+    opacity: ${({ isBrowser }) => (isBrowser ? 0 : 1)};
   }
 `;
 

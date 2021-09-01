@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import Link from 'next/link';
+import { isBrowser } from 'react-device-detect';
 import * as S from '@components/blog/PostPreview/styling';
 import Scene from '@components/blog/scene';
 
@@ -14,7 +15,7 @@ function PostPreview({ data, totalCount, tag }) {
           <S.Post key={title}>
             <Link href={`/blog/${slug}`}>
               <a>
-                <S.Thumbnail>
+                <S.Thumbnail isBrowser={isBrowser}>
                   <img
                     ref={(el) => (imagesRef.current[i] = el)}
                     src={img}
@@ -30,9 +31,11 @@ function PostPreview({ data, totalCount, tag }) {
           </S.Post>
         ))}
       </S.PostList>
-      <S.CanvasContainer>
-        <Scene images={imagesRef.current} />
-      </S.CanvasContainer>
+      {isBrowser ? (
+        <S.CanvasContainer>
+          <Scene images={imagesRef.current} />
+        </S.CanvasContainer>
+      ) : null}
     </>
   );
 }
