@@ -11,6 +11,7 @@
   "dependencies": {
     "@react-three/drei": "^7.5.0",
     "@react-three/fiber": "^7.0.6",
+    "@react-three/postprocessing": "^2.0.5",
     "@reduxjs/toolkit": "^1.6.0",
     "babel-plugin-glsl": "^1.0.0",
     "framer-motion": "^4.1.17",
@@ -20,7 +21,6 @@
     "next": "11.0.0",
     "next-mdx-remote": "^3.0.2",
     "path": "^0.12.7",
-    "postprocessing": "^6.22.3",
     "react": "17.0.2",
     "react-device-detect": "^1.17.0",
     "react-dom": "17.0.2",

@@ -2,7 +2,6 @@ import { Suspense } from 'react';
 import { useWindowSize } from '@hooks';
 import { Canvas } from '@react-three/fiber';
 import Mesh from '@components/blog/scene/mesh';
-import Effects from '@components/blog/scene/effects';
 
 function Scene({ images }) {
   const { width, height } = useWindowSize();
@@ -22,7 +21,6 @@ function Scene({ images }) {
           <Mesh key={`${img.src + index}`} img={img} />
         ))}
       </Suspense>
-      <Effects />
     </Canvas>
   );
 }
